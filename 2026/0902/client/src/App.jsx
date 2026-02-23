@@ -1,10 +1,12 @@
-import Landing from "./pages/Home/Landing"
+import Login from "./pages/Auth/Login"
+import Register from "./pages/Auth/Register"
+
 
 function App() {
   return (
     <>
-       {/* <h1>TodoApp</h1> */}
-       <Landing/>
+       <Register />
+      
     </>
   
   )
