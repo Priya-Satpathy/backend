@@ -30,7 +30,7 @@ const registerController = async(req,res)=>{
         newUser.save();
         res.status(200).send({
             success : true,
-            message: "Record added sucessfully",
+            message: "Record added successfully",
             newUser
         })
         
@@ -56,7 +56,7 @@ const loginController = async(req,res)=>{
             })
         }
         
-         const existingUser = await userModel.findOne({email})
+        const existingUser = await userModel.findOne({email})
         if(!existingUser){
             return res.status(500).send({
                 success :  false,
@@ -66,7 +66,7 @@ const loginController = async(req,res)=>{
         const result = await bcrypt.compare(password,existingUser.password)
         console.log(result);
         if(!result){
-            res.status(500).send({
+          return res.status(500).send({
                 success:false,
                 message:"Invalid credential"
             })
@@ -75,7 +75,7 @@ const loginController = async(req,res)=>{
      
           res.status(200).send({
                 success :  true,
-                message :"Login Sucessful",
+                message :"Login Successful",
                 user:{
                     username : existingUser.username,
                     email : existingUser.email,

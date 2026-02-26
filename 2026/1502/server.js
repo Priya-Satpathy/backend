@@ -6,10 +6,10 @@ const connectDB = require('./config/db');
 const router = require('./router/userRouter');
 
 
-
+dotenv.config();
 connectDB();
 //config
-dotenv.config();
+
 
 //rest api 
 const app = express();

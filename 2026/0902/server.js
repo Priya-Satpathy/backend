@@ -20,12 +20,7 @@ app.use(cors())
 
 connectDB();
 const PORT = process.env.PORT || 3000;
-
-//routes
-// app.get("/test",(req,res)=>{
-//     res.status(200).send("Welcome to Node Server")
-// })
-app.use("/api/v1",router)
+app.use("/api/v1",router);
 
 app.listen(PORT,()=>{
     console.log(`Server is started at port ${PORT} on ${process.env.DEV_MODE} mode`)
