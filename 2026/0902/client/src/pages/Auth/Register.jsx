@@ -17,16 +17,18 @@ const Register = () => {
         setPass('')
     }
   return (
-    <div>
+    <div className='container'>
+      <div className='register-box'>
       <h1>Register Page</h1>
       <input type="text" value={name} placeholder='Your Name'onChange={(e)=>setName(e.target.value)}/>
       <input type="mail" value={mail} placeholder='Your Email' onChange={(e)=>setEmail(e.target.value)}/>
       <input type="pass" value={pass} placeholder='Your Password' onChange={(e)=>setPass(e.target.value)}/>
-        <div>
+        <div className='btn-group'>
             <button onClick={handleSubmit}>Register</button>
             <button onClick={handleClear}>Clear</button>
         </div>
     </div>
+  </div>
   )
 }
 
