@@ -1,34 +1,31 @@
-import React, { useState } from 'react'
-
+import React from 'react'
+import { useState } from 'react'
+import './Register.css'
 const Register = () => {
-    const[mail,setMail] = useState("")
-    const[name,setName] = useState("")
-    const[pass,setPass] = useState("")
+    const[name,setName] = useState('');
+    const[mail,setEmail] = useState('')
+    const[pass,setPass] = useState('')
 
-    function showData(){
+    function handleSubmit(e){
+        console.log(name)
         console.log(mail);
-        console.log(name);
         console.log(pass)
     }
-    function clearData(){
-        setMail("")
-        setName("")
-        setPass("")
+    function handleClear(e){
+        setName('')
+        setEmail('')
+        setPass('')
     }
-   
   return (
     <div>
+      <h1>Register Page</h1>
+      <input type="text" value={name} placeholder='Your Name'onChange={(e)=>setName(e.target.value)}/>
+      <input type="mail" value={mail} placeholder='Your Email' onChange={(e)=>setEmail(e.target.value)}/>
+      <input type="pass" value={pass} placeholder='Your Password' onChange={(e)=>setPass(e.target.value)}/>
         <div>
-        <input type="email" value={mail} placeholder='Email' onChange={(e)=>setMail(e.target.value)}/><br />
-         <input type="name" value={name}placeholder='Name' onChange={(e)=>setName(e.target.value)}/><br />
-        <input type="password" value={pass} placeholder='Password' onChange={(e)=>setPass(e.target.value)}/><br />
-       
+            <button onClick={handleSubmit}>Register</button>
+            <button onClick={handleClear}>Clear</button>
         </div>
-       <div>
-            <button onClick={showData}>Register</button>
-        <button onClick={clearData}>Login</button>
-       </div>
-        
     </div>
   )
 }

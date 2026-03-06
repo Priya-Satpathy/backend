@@ -1,31 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
-   const[mail,setMail] = useState("")
-   const[pass,setPass] = useState("")
-    function showData(){
-        console.log(mail);
-        console.log(pass)
-    }
-     function clearData(){
-        setMail("")
-        setPass("")
-    }
-   
+   const[mail,setEmail] = useState('')
+    const[pass,setPass] = useState('')
+  
+      function handleSubmit(e){
+         
+          console.log(mail);
+          console.log(pass)
+      }
+      function handleClear(e){
+         
+          setEmail('')
+          setPass('')
+      }
+      
   return (
     <div>
+      <h1>Login Page</h1>
+      <input type="mail" value={mail} placeholder='Your Email' onChange={(e)=>setEmail(e.target.value)}/>
+      <input type="pass" value={pass} placeholder='Your Password' onChange={(e)=>setPass(e.target.value)}/>
         <div>
-        <input type="email" value={mail} placeholder='Email' onChange={(e)=>setMail(e.target.value)}/><br />
-       
-        <input type="password" value={pass} placeholder='Password' onChange={(e)=>setPassl(e.target.value)}/><br />
+            <button onClick={handleSubmit}>Login</button>
+            <button onClick={handleClear}>Clear</button>
         </div>
-       <div>
-            <button onClick={showData}>Login</button>
-        <button onClick={clearData}>Clear</button>
-       </div>
-        
     </div>
-     
   )
 }
 

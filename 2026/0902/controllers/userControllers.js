@@ -19,7 +19,7 @@ const registerController = async(req,res)=>{
                 return(
                     res.status(500).send({
                         success : false,
-                        message: "User is already register"
+                        message: "User is already registered"
                     })
                 )
         }
