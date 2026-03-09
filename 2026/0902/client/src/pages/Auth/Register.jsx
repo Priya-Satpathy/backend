@@ -1,15 +1,36 @@
 import React from 'react'
 import { useState } from 'react'
 import './Register.css'
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
+
 const Register = () => {
     const[name,setName] = useState('');
     const[mail,setEmail] = useState('')
     const[pass,setPass] = useState('')
 
-    function handleSubmit(e){
-        console.log(name)
-        console.log(mail);
-        console.log(pass)
+   async function handleSubmit(){
+
+        // const data = {name,mail,pass};
+      try {
+          const data = {
+              username: name,
+              email: mail,
+              password: pass
+      }
+        
+        const res = await axios.post("http://localhost:8000/api/v1/register", data)
+        toast.success(res.data.message);
+        console.log(res);
+        
+      } catch (error) {
+        toast.error("something went wrong");
+        console.log(error)
+      }
+
+        // console.log(name)
+        // console.log(mail);
+        // console.log(pass)
     }
     function handleClear(e){
         setName('')

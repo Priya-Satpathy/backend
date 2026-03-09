@@ -1,14 +1,36 @@
 import React, { useState } from 'react'
 import './Login.css'
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
    const[mail,setEmail] = useState('')
     const[pass,setPass] = useState('')
+
+    
   
-      function handleSubmit(e){
-         
-          console.log(mail);
-          console.log(pass)
+    async function handleSubmit(){
+
+        // const data = {name,mail,pass};
+      try {
+          const data = {
+             
+              email: mail,
+              password: pass
       }
+        
+        const res = await axios.post("http://localhost:8000/api/v1/login", data)
+        toast.success(res.data.message);
+        console.log(res);
+        
+      } catch (error) {
+        toast.error("something went wrong");
+        console.log(error)
+      }
+
+        // console.log(name)
+        // console.log(mail);
+        // console.log(pass)
+    }
       function handleClear(e){
          
           setEmail('')
