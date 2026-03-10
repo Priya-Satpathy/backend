@@ -4,18 +4,19 @@ import Register from "./pages/Auth/Register"
 import Home from "./pages/Home/Home"
 import Landing from "./pages/Landing/Landing"
 import { Toaster } from 'react-hot-toast';
-
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
- 
-
   return (
-    <>
-     <Register />
-     <Toaster />
-     <Login />
-     
-    </>
+    <div>
+      <Toaster />   {/* ✅ Put toaster outside */}
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+      </Routes>
+    </div>
   )
 }
 

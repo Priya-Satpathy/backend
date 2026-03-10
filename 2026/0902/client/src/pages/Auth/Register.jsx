@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './Register.css'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
-
+import { Link } from 'react-router-dom';
 const Register = () => {
     const[name,setName] = useState('');
     const[mail,setEmail] = useState('')
@@ -44,7 +44,9 @@ const Register = () => {
       <input type="text" value={name} placeholder='Your Name'onChange={(e)=>setName(e.target.value)}/>
       <input type="mail" value={mail} placeholder='Your Email' onChange={(e)=>setEmail(e.target.value)}/>
       <input type="pass" value={pass} placeholder='Your Password' onChange={(e)=>setPass(e.target.value)}/>
+        <h2>Already have an account? <Link to = '/login'>Login</Link></h2>
         <div className='btn-group'>
+
             <button onClick={handleSubmit}>Register</button>
             <button onClick={handleClear}>Clear</button>
         </div>
