@@ -1,0 +1,92 @@
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+section{
+  width:100%;
+  padding:15px 80px;
+}
+
+#navbar{
+  display:flex;
+  justify-content:flex-end;
+  list-style:none;
+  gap:40px;
+  font-size:18px;
+  font-weight:500;
+  background-color: #9f9bba;
+}
+
+#navbar li{
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#navbar li:hover{
+  color:#5b4bdb;
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Image section */
+#land-img {
+    flex: 1;
+
+}
+
+#land-img img {
+    width: 50%;
+    max-width: 500px;
+}
+
+/* Text section */
+#register-box {
+    flex: 1;
+    padding: 20px;
+}
+
+#register-box h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#register-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #f1f1f1;
+}
+
+/* Buttons */
+#btn-login {
+    display: flex;
+    gap: 20px;
+}
+
+#btn-login button {
+    padding: 10px 25px;
+    border: none;
+    background-color: #5b4bdb;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-login button:hover {
+    background-color: #4834d4;
+}
+
+#btn-login a {
+    text-decoration: none;
+    color: white;
+}
