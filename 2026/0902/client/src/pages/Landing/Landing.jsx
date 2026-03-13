@@ -1,12 +1,13 @@
 import React from 'react'
 import './landing.css'
 import { Link } from 'react-router-dom'
+import Navbar from '../Layout/Navbar'
 
 const Landing = () => {
   return (
     <>
     
-
+    <Navbar />
       <div id='container'>
         <div id='register-box'>
           <h1>Effortless Task management</h1>
@@ -25,6 +26,7 @@ const Landing = () => {
           <img src="./todo.jpg" alt="todo" />
         </div>
       </div>
+
     </>
   )
 }

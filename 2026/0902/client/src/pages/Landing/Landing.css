@@ -1,35 +1,5 @@
 /* Reset */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-/* Navbar */
-section{
-  width:100%;
-  padding:15px 80px;
-}
-
-#navbar{
-  display:flex;
-  justify-content:flex-end;
-  list-style:none;
-  gap:40px;
-  font-size:18px;
-  font-weight:500;
-  background-color: #9f9bba;
-}
-
-#navbar li{
-  cursor:pointer;
-  transition:0.3s;
-}
-
-#navbar li:hover{
-  color:#5b4bdb;
-}
 #container {
     display: flex;
     justify-content: space-between;
@@ -46,7 +16,7 @@ section{
 }
 
 #land-img img {
-    width: 50%;
+    width: 30%;
     max-width: 500px;
 }
 

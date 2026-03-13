@@ -5,6 +5,8 @@ import Home from "./pages/Home/Home"
 import Landing from "./pages/Landing/Landing"
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom'
+import TodoList from "./pages/Todos/TodoList"
+import Navbar from "./pages/Layout/Navbar"
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
          <Route path="/landing" element={<Landing/>}/>
+          <Route path="/todolist" element={<TodoList/>}/>
+          
       </Routes>
     </div>
   )
